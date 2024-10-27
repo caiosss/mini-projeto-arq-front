@@ -2,7 +2,7 @@
   <form [formGroup]="alunoForm" action="" class="form-container">
 
     <div class="botoes-acoes">
-      <button class="btn" id="puxar-alunos" mat-button>Puxar Alunos</button>
+      <button class="btn" (click)="getAlunos()" id="puxar-alunos" mat-button>Puxar Alunos</button>
       <button class="btn" id="salvar-alunos" mat-button>Salvar Alunos</button>
     </div>
 
@@ -22,5 +22,46 @@
       <button mat-button (click)="buscarNome()" class="btn nome" id="get-nome">Buscar Nome</button>
     </div>
   </form>
+
+  <div class="cards" *ngIf="alunos.length > 0; else noData">
+    <mat-card class="card-aluno" *ngFor="let aluno of alunos">
+        <mat-card-header>
+            <mat-card-title>{{ aluno.nome }}</mat-card-title>
+            <mat-card-subtitle>Curso: {{ aluno.curso }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            Id: {{ aluno.id }}
+        </mat-card-content>
+        <mat-card-content>
+            Modalidade: {{ aluno.modalidade }}
+        </mat-card-content>
+        <mat-card-content>
+            Status: {{ aluno.status }}
+        </mat-card-content>
+
+        <mat-card-content *ngIf="aluno.disciplinas?.length > 0">
+          <strong>Disciplinas:</strong>
+          <ul>
+            <li *ngFor="let disciplina of aluno.disciplinas">
+              {{ disciplina.nome }}
+            </li>
+          </ul>
+        </mat-card-content>
+
+        <mat-card-content *ngIf="aluno.biblioteca?.length > 0">
+          <strong>Livros:</strong>
+          <ul>
+            <li *ngFor="let livro of aluno.biblioteca">
+              {{ livro.titulo }}
+            </li>
+          </ul>
+        </mat-card-content>
+        
+    </mat-card>
+  </div>
+
+  <ng-template #noData>
+    <p>Nenhum dado disponível.</p>
+  </ng-template>
 
 </div>

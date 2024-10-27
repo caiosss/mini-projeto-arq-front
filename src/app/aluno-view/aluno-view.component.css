@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  flex-direction: column;
 }
 
 .form-container{
@@ -31,4 +31,67 @@
   margin-top: 10px;
   gap: 10px;
 }
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.card-aluno {
+  background-color: #ffffff; /* Fundo branco */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin: 20px; /* Margem em torno do card */
+  padding: 20px; /* Espaçamento interno */
+  transition: transform 0.3s, box-shadow 0.3s; /* Efeito de transição */
+
+  &:hover {
+    transform: translateY(-5px); /* Leve elevação ao passar o mouse */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+  }
+
+  mat-card-header {
+    background-color: #f5f5f5; /* Fundo do cabeçalho */
+    border-radius: 10px 10px 0 0; /* Bordas arredondadas no topo */
+    padding: 10px; /* Espaçamento interno */
+  }
+
+  mat-card-title {
+    font-size: 1.5rem; /* Tamanho da fonte do título */
+    font-weight: bold; /* Fonte em negrito */
+    color: #333; /* Cor do texto */
+  }
+
+  mat-card-subtitle {
+    font-size: 1.1rem; /* Tamanho da fonte do subtítulo */
+    color: #666; /* Cor do texto do subtítulo */
+  }
+
+  mat-card-content {
+    font-size: 1rem; /* Tamanho da fonte do conteúdo */
+    color: #444; /* Cor do texto */
+    margin: 10px 0; /* Margem vertical entre os conteúdos */
+  }
+
+  ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding da lista */
+  }
+
+  li {
+    background-color: #e3f2fd; /* Fundo azul claro para itens da lista */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 8px; /* Espaçamento interno */
+    margin: 5px 0; /* Margem entre os itens */
+    transition: background-color 0.3s; /* Transição para o efeito de hover */
+
+    &:hover {
+      background-color: #bbdefb; /* Cor mais escura ao passar o mouse */
+    }
+  }
+}
+
+
 
