@@ -1,0 +1,26 @@
+<div class="container">
+  <form [formGroup]="alunoForm" action="" class="form-container">
+
+    <div class="botoes-acoes">
+      <button class="btn" id="puxar-alunos" mat-button>Puxar Alunos</button>
+      <button class="btn" id="salvar-alunos" mat-button>Salvar Alunos</button>
+    </div>
+
+    <div class="input-id">
+      <mat-form-field appearance="outline">
+        <mat-label>ID</mat-label>
+        <input class="id-input" formControlName="idAluno" matInput type="number" placeholder="Insira o ID do aluno">
+      </mat-form-field>
+      <button mat-button (click)="buscarID()" class="btn id" id="get-id">Buscar ID</button>
+    </div>
+
+    <div class="input-nome">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" formControlName="nomeAluno" placeholder="Insira o Nome do aluno">
+      </mat-form-field>
+      <button mat-button (click)="buscarNome()" class="btn nome" id="get-nome">Buscar Nome</button>
+    </div>
+  </form>
+
+</div>

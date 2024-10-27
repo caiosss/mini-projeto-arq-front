@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.botoes-acoes {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn{
+  background-color: purple;
+  font-size: 1.3rem;
+}
+
+.id, .nome {
+  padding: 28px;
+}
+
+.input-id, .input-nome {
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+}
+
