@@ -2,14 +2,13 @@
   <form [formGroup]="alunoForm" action="" class="form-container">
 
     <div class="botoes-acoes">
-      <button class="btn" (click)="getAlunos()" id="puxar-alunos" mat-button>Puxar Alunos</button>
-      <button class="btn" id="salvar-alunos" mat-button>Salvar Alunos</button>
+      <button class="btn btn-puxar" (click)="getAlunos()" id="puxar-alunos" mat-button>Puxar Alunos</button>
     </div>
 
     <div class="input-id">
       <mat-form-field appearance="outline">
         <mat-label>ID</mat-label>
-        <input class="id-input" formControlName="idAluno" matInput type="number" placeholder="Insira o ID do aluno">
+        <input class="id-input" formControlName="idAluno" matInput type="text" placeholder="Insira o ID do aluno">
       </mat-form-field>
       <button mat-button (click)="buscarID()" class="btn id" id="get-id">Buscar ID</button>
     </div>
@@ -56,7 +55,7 @@
             </li>
           </ul>
         </mat-card-content>
-        
+
     </mat-card>
   </div>
 

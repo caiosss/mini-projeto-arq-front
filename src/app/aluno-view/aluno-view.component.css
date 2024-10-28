@@ -22,6 +22,10 @@
   font-size: 1.3rem;
 }
 
+.btn-puxar {
+  width: 100%;
+}
+
 .id, .nome {
   padding: 28px;
 }
@@ -40,56 +44,57 @@
 }
 
 .card-aluno {
-  background-color: #ffffff; /* Fundo branco */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  margin: 20px; /* Margem em torno do card */
-  padding: 20px; /* Espaçamento interno */
-  transition: transform 0.3s, box-shadow 0.3s; /* Efeito de transição */
+  background-color: #ffffff;
+  border-radius: 48px 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
 
   &:hover {
-    transform: translateY(-5px); /* Leve elevação ao passar o mouse */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
 
   mat-card-header {
-    background-color: #f5f5f5; /* Fundo do cabeçalho */
-    border-radius: 10px 10px 0 0; /* Bordas arredondadas no topo */
-    padding: 10px; /* Espaçamento interno */
+    background-color: #f5f5f5;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
   }
 
   mat-card-title {
-    font-size: 1.5rem; /* Tamanho da fonte do título */
-    font-weight: bold; /* Fonte em negrito */
-    color: #333; /* Cor do texto */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
   }
 
   mat-card-subtitle {
-    font-size: 1.1rem; /* Tamanho da fonte do subtítulo */
-    color: #666; /* Cor do texto do subtítulo */
+    font-size: 1.1rem;
+    color: #666;
   }
 
   mat-card-content {
-    font-size: 1rem; /* Tamanho da fonte do conteúdo */
-    color: #444; /* Cor do texto */
-    margin: 10px 0; /* Margem vertical entre os conteúdos */
+    font-size: 1rem;
+    color: #444;
+    margin: 10px 0;
   }
 
   ul {
-    list-style-type: none; /* Remove os marcadores da lista */
-    padding: 0; /* Remove o padding da lista */
+    list-style-type: none;
+    padding: 0;
   }
 
   li {
-    background-color: #e3f2fd; /* Fundo azul claro para itens da lista */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 8px; /* Espaçamento interno */
-    margin: 5px 0; /* Margem entre os itens */
-    transition: background-color 0.3s; /* Transição para o efeito de hover */
+    background-color: #e3f2fd;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px 0;
+    transition: background-color 0.3s;
 
     &:hover {
-      background-color: #bbdefb; /* Cor mais escura ao passar o mouse */
+      background-color: #bbdefb;
     }
+
   }
 }
 

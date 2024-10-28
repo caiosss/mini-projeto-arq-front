@@ -14,4 +14,17 @@ export class AlunoService {
   getAlunos(): Observable<any[]> {
     return this.http.get<any[]>(this.apiURL)
   }
+
+  getAlunoId(id:number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiURL}/${id}`)
+  }
+
+  getAlunoNome(nome:string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiURL}/nome/${nome}`)
+  }
+
+  saveAlunos(): Observable<any[]> {
+    return this.http.post<any[]>(`${this.apiURL}/salvarAlunos`,{})
+  }
+
 }
