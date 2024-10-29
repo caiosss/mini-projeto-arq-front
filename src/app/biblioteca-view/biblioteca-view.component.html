@@ -1,0 +1,49 @@
+<div class="container">
+  <form action="" [formGroup]="bibliotecaForm" class="form-container">
+
+    <div class="botoes-acoes">
+      <button class="btn btn-puxar" (click)="getBiblioteca()" id="puxar-disciplinas" mat-button>Puxar Biblioteca</button>
+    </div>
+
+    <div class="input-id">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome do Aluno</mat-label>
+        <input class="id-input" formControlName="nomeAluno" matInput type="text" placeholder="Insira o nome do Aluno">
+      </mat-form-field>
+    </div>
+
+    <div class="input-nome">
+      <mat-form-field appearance="outline">
+        <mat-label>Livro</mat-label>
+        <input matInput type="text" formControlName="nomeLivro" placeholder="Insira o Livro">
+      </mat-form-field>
+    </div>
+
+    <button mat-button (click)="reservarLivro()" class="btn nome" id="get-nome">Reservar Livro</button>
+    <button mat-button (click)="devolverLivro()" class="btn nome" id="get-nome">Cancelar Reserva</button>
+
+  </form>
+
+  <div class="cards" *ngIf="livros.length > 0; else noData">
+    <mat-card class="card-aluno" *ngFor="let livro of livros">
+        <mat-card-header>
+            <mat-card-title>{{ livro.titulo }}</mat-card-title>
+            <mat-card-subtitle>Curso: {{ livro.autor }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            Id: {{ livro.id }}
+        </mat-card-content>
+        <mat-card-content>
+            Ano: {{ livro.ano }}
+        </mat-card-content>
+        <mat-card-content>
+            Status: {{ livro.status }}
+        </mat-card-content>
+    </mat-card>
+  </div>
+
+  <ng-template #noData>
+    <p>Nenhum dado disponível.</p>
+  </ng-template>
+
+</div>

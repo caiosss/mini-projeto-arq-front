@@ -18,7 +18,7 @@ export class DisciplinaViewComponent implements OnInit {
     this.disciplinaForm = new FormGroup({
       nomeAluno: new FormControl(''),
       nomeDisciplina: new FormControl(''),
-    })
+    });
   }
 
   getDisciplinas() {
@@ -29,7 +29,7 @@ export class DisciplinaViewComponent implements OnInit {
       (error) => {
         console.log('Erro: ', error)
       }
-    )
+    );
   }
 
   matricularAluno() {
@@ -44,7 +44,7 @@ export class DisciplinaViewComponent implements OnInit {
         this.openSnackBar("Erro ao Matricular.")
         console.log("Erro: ", error)
       }
-    )
+    );
   }
 
   removerAluno() {
@@ -59,8 +59,7 @@ export class DisciplinaViewComponent implements OnInit {
         this.openSnackBar("Erro ao desmstricular!")
         console.log(error)
       }
-    )
-
+    );
   }
 
   openSnackBar(message: string) {
