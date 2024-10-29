@@ -24,10 +24,10 @@ export class DisciplinaViewComponent implements OnInit {
   getDisciplinas() {
     this.disciplinaService.getDisciplinas().subscribe(
       (data) => {
-        this.disciplinas = data
+        this.disciplinas = data;
       },
       (error) => {
-        console.log('Erro: ', error)
+        console.log('Erro: ', error);
       }
     );
   }
@@ -37,12 +37,17 @@ export class DisciplinaViewComponent implements OnInit {
     const nomeDisciplina = this.disciplinaForm.get('nomeDisciplina')?.value;
 
     this.disciplinaService.matricularAluno(nomeAluno, nomeDisciplina).subscribe(
-      (data) => {
-        this.openSnackBar("Aluno Matriculado!")
+      (response) => {
+        this.openSnackBar("Aluno Matriculado!");
+
+        if(response === null) {
+          this.openSnackBar("O aluno não está ativo no curso.");
+        }
+
       },
       (error) => {
-        this.openSnackBar("Erro ao Matricular.")
-        console.log("Erro: ", error)
+        this.openSnackBar("Erro ao Matricular.");
+        console.log("Erro: ", error);
       }
     );
   }
@@ -52,12 +57,16 @@ export class DisciplinaViewComponent implements OnInit {
     const nomeDisciplina = this.disciplinaForm.get('nomeDisciplina')?.value;
 
     this.disciplinaService.removerAluno(nomeAluno, nomeDisciplina).subscribe(
-      (data) => {
-        this.openSnackBar("Aluno desmatriculado!")
+      (response) => {
+        this.openSnackBar("Aluno desmatriculado!");
+
+        if(response === null) {
+          this.openSnackBar("O aluno não está ativo no curso.");
+        }
       },
       (error) => {
-        this.openSnackBar("Erro ao desmstricular!")
-        console.log(error)
+        this.openSnackBar("Erro ao desmatricular!");
+        console.log(error);
       }
     );
   }

@@ -57,8 +57,12 @@ export class BibliotecaViewComponent implements OnInit {
     const nomeLIvro = this.bibliotecaForm.get('nomeLivro')?.value;
 
     this.bibliotecaService.devolverLivro(nomeAluno, nomeLIvro).subscribe(
-      (data) => {
+      (response) => {
         this.openSnackBar(`Livro ${nomeLIvro} devolvido!`);
+
+        if(response === null) {
+          this.openSnackBar("Não foi possível devolver o livro!")
+        }
       },
       (error) => {
         console.log("Error: ", error);

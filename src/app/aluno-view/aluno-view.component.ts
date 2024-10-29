@@ -24,10 +24,10 @@ export class AlunoViewComponent implements OnInit {
   getAlunos() {
     this.alunoService.getAlunos().subscribe(
       (data) => {
-        this.alunos = data
+        this.alunos = data;
       },
       (error) => {
-        console.log("Erro", error)
+        console.log("Erro", error);
       }
     );
   }
@@ -42,12 +42,12 @@ export class AlunoViewComponent implements OnInit {
           dataArr.push(data)
           this.alunos = dataArr
         } else {
-          this.openSnackBar("Aluno não encontrado!")
+          this.openSnackBar("Aluno não encontrado!");
         }
       },
       (error) => {
         console.log("Erro", error)
-        this.openSnackBar("Erro ao buscar o Aluno.")
+        this.openSnackBar("Erro ao buscar o Aluno.");
       }
     );
   }
@@ -58,16 +58,16 @@ export class AlunoViewComponent implements OnInit {
     this.alunoService.getAlunoNome(nome).subscribe(
       (data) => {
         if(data) {
-          let dataArr = []
-          dataArr.push(data)
-          this.alunos = dataArr
+          let dataArr = [];
+          dataArr.push(data);
+          this.alunos = dataArr;
         } else {
           this.openSnackBar("Aluno não encontrado!")
         }
       },
       (error) => {
-        console.log("Erro", error)
-        this.openSnackBar("Erro ao buscar o Aluno.")
+        console.log("Erro", error);
+        this.openSnackBar("Erro ao buscar o Aluno.");
       }
     );
   }
