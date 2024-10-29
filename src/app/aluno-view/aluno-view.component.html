@@ -48,7 +48,7 @@
         </mat-card-content>
 
         <mat-card-content *ngIf="aluno.biblioteca?.length > 0">
-          <strong>Livros:</strong>
+          <strong>Livros Reservados:</strong>
           <ul>
             <li *ngFor="let livro of aluno.biblioteca">
               {{ livro.titulo }}

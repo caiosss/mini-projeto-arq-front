@@ -1,0 +1,43 @@
+<div class="container">
+  <form action="" [formGroup]="disciplinaForm" class="form-container">
+
+    <div class="botoes-acoes">
+      <button class="btn btn-puxar" (click)="getDisciplinas()" id="puxar-disciplinas" mat-button>Puxar Disciplinas</button>
+    </div>
+
+    <div class="input-id">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome do Aluno</mat-label>
+        <input class="id-input" formControlName="nomeAluno" matInput type="text" placeholder="Insira o nome do Aluno">
+      </mat-form-field>
+    </div>
+
+    <div class="input-nome">
+      <mat-form-field appearance="outline">
+        <mat-label>Disciplina</mat-label>
+        <input matInput type="text" formControlName="nomeDisciplina" placeholder="Insira a Disciplina">
+      </mat-form-field>
+    </div>
+
+    <button mat-button (click)="matricularAluno()" class="btn nome" id="get-nome">Matricular Aluno</button>
+    <button mat-button (click)="removerAluno()" class="btn nome" id="get-nome">Desmatricular Aluno</button>
+
+  </form>
+
+  <div class="cards" *ngIf="disciplinas.length > 0; else noData">
+    <mat-card class="card-aluno" *ngFor="let disciplina of disciplinas">
+        <mat-card-header>
+            <mat-card-title>{{ disciplina.nome }}</mat-card-title>
+            <mat-card-subtitle>Curso: {{ disciplina.curso }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            Id: {{ disciplina.id }}
+        </mat-card-content>
+    </mat-card>
+  </div>
+
+  <ng-template #noData>
+    <p>Nenhum dado disponível.</p>
+  </ng-template>
+
+</div>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AlunoService } from '../Services/aluno.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-aluno-view',
@@ -73,17 +72,6 @@ export class AlunoViewComponent implements OnInit {
     );
   }
 
-  salvarAlunos() {
-    this.alunoService.saveAlunos().subscribe(
-      (response) => {
-        this.openSnackBar("Alunos salvos com sucesso!")
-      },
-      (error) => {
-        console.log("Erro: ", error)
-        this.openSnackBar("Houve um erro ao salvar!")
-      }
-    )
-  }
 
   openSnackBar(message: string) {
     this.snackBar.open(message, 'Fechar', {

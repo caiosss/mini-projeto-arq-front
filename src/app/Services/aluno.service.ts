@@ -24,7 +24,7 @@ export class AlunoService {
   }
 
   saveAlunos(): Observable<any[]> {
-    return this.http.post<any[]>(`${this.apiURL}/salvarAlunos`,{})
+    return this.http.post<any[]>(`${this.apiURL}/salvarAlunos`, null)
   }
 
 }
