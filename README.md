@@ -1,27 +1,31 @@
-# MiniProjeto
+# Mini Projeto 💻
+Este foi um projeto desenvolvido durante a disciplina de Projeto de Arquitetura de Sistemas. Aqui foi utilizado **Angular 16** para criar as *Views* e **Spring Boot** para a criação da API onde está os Controllers, Services, Repositories e consumo de API's fornecidas pelo professor.
+<p align="center">
+<img src="./images/home.png">
+<img src="./images/disciplinas.png">
+<img src="./images/biblioteca.png">
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Arquitetura e Padrões de Projeto 🏗️
 
-## Development server
+Foi utilizada uma **Arquitetura de Microsserviços**, ou seja, cada model tinha seu próprio microsserviço pronto para consumir e conseguir fazer a API ser alimentada e responder as requisições HTTP. Como padrão foi necessário usar o **MVC**(Model, View, Controller).  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Repositórios 📤
 
-## Code scaffolding
+O projeto foi separado em dois repositórios:
+- Front-end (esse atual)
+- [Back-end](https://github.com/caiosss/mini-projeto-arq-sistemas)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Cenário 🎬
 
-## Build
+O cenário principal deste projeto é a simulação de matriculas e reservas de livros em uma universidade. O aluno, caso esteja ativo no curso, é capaz de se matricular na disciplina desejada e se quiser poderá reservar livros diretamente na biblioteca. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Como funciona? 🤔
 
-## Running unit tests
+Quando o usuário aperta no botão de puxar alunos, disciplinas ou biblioteca é feita uma requisição **HTTP** do tipo **GET**. Ao puxar os dados, dentro do método do controlador há a persistência desses dados em memória utilizando o banco de dados H2 disponibilizado pelo **Spring Boot**. Dessa maneira, há uma facilidade em fazer requisições para buscar ou atualizar, pois basta chamar pelo banco de dados.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contribuidores 🎉
+- Caio (mantedor do projeto)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+<p align="center"> Feito com ☕ por Caio</p>
